@@ -1835,11 +1835,13 @@
                 "text": "Blob storage"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1853,13 +1855,66 @@
               "description": "Storing of images, files, etc.",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "487fc92d-3f51-4897-a7d7-00452ac90d63",
+                  "title": "Repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Actor could change blobs.",
+                  "mitigation": "Audit trail in tenant's database. Additionally, use cloud provider logs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": ""
+                },
+                {
+                  "id": "33cac50f-47f9-4584-8483-a0bda9001c6a",
+                  "title": "Tampering blobs",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Actor could change blobs they don't have access to.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": ""
+                },
+                {
+                  "id": "b2fc005a-22ca-40dd-bece-894aeb554890",
+                  "title": "Information disclosure",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Actor could read blobs they don't have access to.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 30,
+                  "score": ""
+                },
+                {
+                  "id": "abcc3968-695c-4082-93cf-a022e143f586",
+                  "title": "Denial of service",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Too many requests could hinder performance.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2142,7 +2197,21 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "1f070a8f-4b32-4f91-a62d-7c2cc5c51b10",
+                  "title": "Denial of service",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Too many requests could hinder performance of client.",
+                  "mitigation": "Cloud flare, rate limiting, throttling, horizontal scaling - orchestration.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 33,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2364,8 +2433,8 @@
                 "text": "Documentation\nservice"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2378,12 +2447,65 @@
               "description": "Handle main assets - documentations of tenant",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": true,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "d3f51036-3bd7-4438-9915-1eab802b378d",
+                  "title": "Faking identity",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Actor could fake identity.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": ""
+                },
+                {
+                  "id": "79ca9e76-1e03-436d-99d7-6027f9d2a063",
+                  "title": "Tampering with documentation",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Actor could tamper with documentation of different tenant.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": ""
+                },
+                {
+                  "id": "8ca6450f-7b27-4419-81c5-4fae5452b8b8",
+                  "title": "Repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Actor could change data with malicious intent and we wouldn't be able to track them.",
+                  "mitigation": "Audit trail",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": ""
+                },
+                {
+                  "id": "1ef3932e-5e34-4db2-9c34-cfc73f9052f1",
+                  "title": "Denial of service",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Too many requests",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                }
+              ]
             },
             "zIndex": 47
           },
@@ -2951,6 +3073,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 22
+    "threatTop": 34
   }
 }
