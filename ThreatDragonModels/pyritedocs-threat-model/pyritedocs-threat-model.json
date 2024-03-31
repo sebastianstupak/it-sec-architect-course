@@ -2064,7 +2064,7 @@
               "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
-              "isWebApplication": false,
+              "isWebApplication": true,
               "privilegeLevel": "",
               "threats": []
             }
@@ -2304,7 +2304,7 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
+              "handlesGoodsOrServices": true,
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
@@ -2325,8 +2325,8 @@
                 "text": "Tenant service"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2336,15 +2336,29 @@
             "data": {
               "type": "tm.Process",
               "name": "Tenant service",
-              "description": "",
+              "description": "Handle tenant information and members of tenant",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
+              "hasOpenThreats": true,
+              "handlesCardPayment": true,
+              "handlesGoodsOrServices": true,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "08ec7b9e-9ff5-4361-b855-e797a8d160bf",
+                  "title": "Tampering with tenant information",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "There is possibility that some actor could tamper with tenant's information",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ]
             },
             "zIndex": 48
           },
@@ -2785,6 +2799,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 9
+    "threatTop": 10
   }
 }
