@@ -89,7 +89,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 15,
-                  "score": ""
+                  "score": "Low"
                 },
                 {
                   "id": "670f977a-0c63-4f3b-b28d-0c8d3acd2797",
@@ -102,7 +102,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 16,
-                  "score": ""
+                  "score": "Low"
                 },
                 {
                   "id": "08a3eade-0a29-416a-8a10-3f09ff9f4791",
@@ -111,11 +111,11 @@
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "Actor could retrieve data to which he doesn't have access",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Secure access through logins. Only allow minimal access. Store connection strings in secrets.\n\n+ Encryption of very sensitive data",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 17,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "28682c25-bd01-4a3b-9645-ce1b29f4c444",
@@ -124,11 +124,11 @@
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "Tampering data that actor doesn't have access to",
-                  "mitigation": "",
+                  "mitigation": "Secure access through logins. Only allow minimal access. Store connection strings in secrets.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 19,
-                  "score": ""
+                  "score": "High"
                 }
               ]
             }
@@ -1776,7 +1776,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 18,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "21e19fd3-729b-4e07-9b35-17a06ffd3f35",
@@ -1789,7 +1789,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 20,
-                  "score": ""
+                  "score": "Low"
                 },
                 {
                   "id": "b18e3869-f99c-46a0-a0e2-71d7e1769abe",
@@ -1802,7 +1802,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 21,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "fa7781d4-e6c6-473d-ba97-978f1998f4bb",
@@ -1815,7 +1815,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 22,
-                  "score": ""
+                  "score": "Low"
                 }
               ]
             },
@@ -1873,7 +1873,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 28,
-                  "score": ""
+                  "score": "Low"
                 },
                 {
                   "id": "33cac50f-47f9-4584-8483-a0bda9001c6a",
@@ -1882,11 +1882,11 @@
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Actor could change blobs they don't have access to.",
-                  "mitigation": "Secure access through logins. Only allow minimal access. Store connection strings in secrets.",
+                  "mitigation": "Secure access through IAM, allow only minimal access. Store access key in secrets.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 29,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "b2fc005a-22ca-40dd-bece-894aeb554890",
@@ -1895,11 +1895,11 @@
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "Actor could read blobs they don't have access to.",
-                  "mitigation": "Secure access through logins. Only allow minimal access. Store connection strings in secrets.\n\n+ Encryption of very sensitive data",
+                  "mitigation": "Secure access through IAM, allow only minimal access. Store access key in secrets.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 30,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "abcc3968-695c-4082-93cf-a022e143f586",
@@ -1908,11 +1908,11 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Too many requests could hinder performance.",
-                  "mitigation": "",
+                  "mitigation": "Cloud provider - e.g. AWS S3, probably they handle it on their side?",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 31,
-                  "score": ""
+                  "score": "High"
                 }
               ]
             }
@@ -2209,7 +2209,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 33,
-                  "score": ""
+                  "score": "High"
                 }
               ]
             }
@@ -2428,7 +2428,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 35,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "07efb8d1-d596-4ee6-82b4-cde972706aed",
@@ -2441,7 +2441,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 36,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "f6a6a3e8-9365-4f8f-b91c-3df650601cbf",
@@ -2454,7 +2454,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 37,
-                  "score": ""
+                  "score": "Medium"
                 }
               ]
             }
@@ -2504,7 +2504,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 23,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "79ca9e76-1e03-436d-99d7-6027f9d2a063",
@@ -2517,7 +2517,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 24,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "8ca6450f-7b27-4419-81c5-4fae5452b8b8",
@@ -2530,7 +2530,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 25,
-                  "score": ""
+                  "score": "Medium"
                 },
                 {
                   "id": "1ef3932e-5e34-4db2-9c34-cfc73f9052f1",
@@ -2543,7 +2543,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 26,
-                  "score": ""
+                  "score": "High"
                 },
                 {
                   "id": "59ee9952-0a45-4d0a-bfb1-2da757794f1b",
@@ -2556,7 +2556,7 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 39,
-                  "score": ""
+                  "score": "High"
                 }
               ]
             },
