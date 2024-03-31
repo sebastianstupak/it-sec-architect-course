@@ -3,7 +3,7 @@
   "summary": {
     "title": "pyritedocs-threat-model",
     "owner": "sebastian-stupak",
-    "description": "",
+    "description": "Multi-tenant SaaS web aplikácia. Aplikácia poskytuje možnosť vytvárať si dokumentácie a zdielať informácie skrz organizáciu (tenant).\nUživatelia organizácie si môžu vytvoriť dokumentančnú page, skrz integrácie napr. v Discorde, Slack a pod.\nDokumentačný page, má vždy nejaký vstup: email thread, message thread, etc.\nPodobné projekty:\n-\thttps://www.atlassian.com/software/confluence\n-\thttps://www.answeroverflow.com/\n-\thttps://nextjs-forum.com/\n\nAktiva:\n-\tdatabáza (informácie)\n-\taplikácia (backend a frontend services)\n-\tthird-party služby, e.g. Stripe, Clerk, cloud provider (AWS, Azure, …)\n\nZranitelnosť:\n-\tdatabáza:\no\t injections\no\t single point of failure\no\t data security risk\n-\taplikácia\no\tsingle point of failure\no\tddos\no\tinjections\n\nHrozba:\n-\tzlyhanie hardware\n-\tprirodná katastrofa\n-\tútok na systém\n-\tzlyhanie third-party služieb",
     "id": 0
   },
   "detail": {
