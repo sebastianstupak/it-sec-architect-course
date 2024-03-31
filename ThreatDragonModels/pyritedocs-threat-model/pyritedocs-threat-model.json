@@ -68,7 +68,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Tenant Info Database",
-              "description": "Stores connection strings to tenant databases",
+              "description": "Stores connection strings to tenant databases, other personal tenant info.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
@@ -98,7 +98,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Actor could make too many requests to database.",
-                  "mitigation": "",
+                  "mitigation": "Not sure - sharding?",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 16,
@@ -1471,35 +1471,6 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false
             },
-            "id": "75322774-d480-401e-b17f-2c8dd744f29d",
-            "source": {
-              "x": 1070,
-              "y": -150
-            },
-            "target": {
-              "x": 870,
-              "y": 130
-            },
-            "vertices": [
-              {
-                "x": 960,
-                "y": -50
-              }
-            ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
             "id": "f71d60b5-5cca-4e95-86e7-262ac10af937",
             "source": {
               "x": 880,
@@ -1726,6 +1697,35 @@
             ]
           },
           {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "75322774-d480-401e-b17f-2c8dd744f29d",
+            "source": {
+              "x": 1070,
+              "y": -150
+            },
+            "target": {
+              "x": 920,
+              "y": 120
+            },
+            "vertices": [
+              {
+                "x": 960,
+                "y": -50
+              }
+            ]
+          },
+          {
             "position": {
               "x": 1375,
               "y": 543
@@ -1755,7 +1755,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Tenant Databases",
-              "description": "Shared or isolated database of tenants",
+              "description": "Shared or isolated database of tenants, stores sensitive data of tenants.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
@@ -1811,7 +1811,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Actor could make too many requests.",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Not sure - sharding?",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 22,
@@ -1852,7 +1852,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Blob storage",
-              "description": "Storing of images, files, etc.",
+              "description": "Cloud blob storage. Stores blobs that are connected to tenant's assets.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
@@ -2416,7 +2416,47 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "de98e3a1-ec39-4245-bee8-c1b51f405a45",
+                  "title": "Fake identity",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Actor could fake identity and try to invoke event in order to propagate it to different services.",
+                  "mitigation": "OAuth2 protocol should handle authentication with proper tenants.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 35,
+                  "score": ""
+                },
+                {
+                  "id": "07efb8d1-d596-4ee6-82b4-cde972706aed",
+                  "title": "Denial of service",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Actor could make too many requests and hinder performance.",
+                  "mitigation": "Rate limiting, throttling, vertical scaling through orchestration.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": ""
+                },
+                {
+                  "id": "f6a6a3e8-9365-4f8f-b91c-3df650601cbf",
+                  "title": "Repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Actors could invoke events in order to cause malice.",
+                  "mitigation": "Logs of requests should be kept in order to match them appropriate audit trail.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 37,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2460,7 +2500,7 @@
                   "severity": "High",
                   "type": "Spoofing",
                   "description": "Actor could fake identity.",
-                  "mitigation": "",
+                  "mitigation": "OIDC authentication should handle faking of identity. Tenant information should be passed through claims.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 23,
@@ -2469,11 +2509,11 @@
                 {
                   "id": "79ca9e76-1e03-436d-99d7-6027f9d2a063",
                   "title": "Tampering with documentation",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Actor could tamper with documentation of different tenant.",
-                  "mitigation": "",
+                  "mitigation": "Middlewares that authenticate and authorize tenant and only allow changes to their data.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 24,
@@ -2486,7 +2526,7 @@
                   "severity": "Medium",
                   "type": "Repudiation",
                   "description": "Actor could change data with malicious intent and we wouldn't be able to track them.",
-                  "mitigation": "Audit trail",
+                  "mitigation": "Audit trail, logs.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 25,
@@ -2495,14 +2535,27 @@
                 {
                   "id": "1ef3932e-5e34-4db2-9c34-cfc73f9052f1",
                   "title": "Denial of service",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Too many requests",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Too many requests could hinder performance.",
+                  "mitigation": "Rate limiting, throttling, vertical scaling through orchestration.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 26,
+                  "score": ""
+                },
+                {
+                  "id": "59ee9952-0a45-4d0a-bfb1-2da757794f1b",
+                  "title": "Retrieve tenant's assets",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Actor could request assets of different tenant.",
+                  "mitigation": "Middlewares that authenticate and authorize tenant and only allow access to their data.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 39,
                   "score": ""
                 }
               ]
@@ -2546,11 +2599,11 @@
                 {
                   "id": "08ec7b9e-9ff5-4361-b855-e797a8d160bf",
                   "title": "Tampering with tenant information",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "High",
                   "type": "Tampering",
                   "description": "There is possibility that some actor could tamper with tenant's information",
-                  "mitigation": "",
+                  "mitigation": "Middlewares that authenticate and authorize tenant and only allow changes to their data.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 10,
@@ -2563,7 +2616,7 @@
                   "severity": "High",
                   "type": "Spoofing",
                   "description": "Actor could act as identity that can manipulate with tenant info data.",
-                  "mitigation": "",
+                  "mitigation": "Not sure what's the best practice to authenticate backend service against another backend service in which we don't want to limit retrieval of specific tenant info data - in that case we could forward access token and authenticate. But what if we want to call admin sensitive admin endpoint?",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 11,
@@ -2572,11 +2625,11 @@
                 {
                   "id": "75e9c17e-7bd6-46f9-ad0c-7c36454232c1",
                   "title": "Retrieve tenant info",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Actor could retrieve sensitive tenant information",
-                  "mitigation": "",
+                  "mitigation": "Middlewares that authenticate and authorize tenant and only allow access to their data.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 12,
@@ -2585,14 +2638,27 @@
                 {
                   "id": "fd78d1ff-819c-4815-ba4e-d59ab5e40899",
                   "title": "Denial of service",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Actor could make too many requests",
-                  "mitigation": "",
+                  "mitigation": "Rate limiting, throttling, vertical scaling through orchestration.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 13,
+                  "score": ""
+                },
+                {
+                  "id": "8f5a58c2-bc69-43d8-a51f-f08c221c36cb",
+                  "title": "Repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Actors could change data and cause malice - we won't be able to track them.",
+                  "mitigation": "Audit trail, logs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 38,
                   "score": ""
                 }
               ]
@@ -3009,8 +3075,8 @@
           },
           {
             "position": {
-              "x": 977.5,
-              "y": 152
+              "x": 948.25,
+              "y": 120
             },
             "size": {
               "width": 112.5,
@@ -3073,6 +3139,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 34
+    "threatTop": 39
   }
 }
