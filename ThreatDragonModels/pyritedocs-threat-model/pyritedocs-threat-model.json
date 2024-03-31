@@ -116,6 +116,19 @@
                   "new": false,
                   "number": 17,
                   "score": ""
+                },
+                {
+                  "id": "28682c25-bd01-4a3b-9645-ce1b29f4c444",
+                  "title": "Tampering data",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Tampering data that actor doesn't have access to",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": ""
                 }
               ]
             }
@@ -1726,11 +1739,13 @@
                 "text": "Tenant Databases"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1743,13 +1758,66 @@
               "description": "Shared or isolated database of tenants",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": true,
               "isEncrypted": true,
               "isSigned": false,
               "storesCredentials": true,
               "storesInventory": true,
-              "threats": []
+              "threats": [
+                {
+                  "id": "a477f37e-f322-4477-9193-a49641b79b9c",
+                  "title": "Tampering data",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Tampering data that actor doesn't have access to",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": ""
+                },
+                {
+                  "id": "21e19fd3-729b-4e07-9b35-17a06ffd3f35",
+                  "title": "Repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Actor could change data with malicious intent and we wouldn't be able to trace them.",
+                  "mitigation": "Audit trail",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": ""
+                },
+                {
+                  "id": "b18e3869-f99c-46a0-a0e2-71d7e1769abe",
+                  "title": "Information disclosure",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Actor shouldn't access data that they don't have access to.",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": ""
+                },
+                {
+                  "id": "fa7781d4-e6c6-473d-ba97-978f1998f4bb",
+                  "title": "Denial of service",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Actor could make too many requests.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": ""
+                }
+              ]
             },
             "zIndex": 11
           },
@@ -2285,7 +2353,7 @@
           {
             "position": {
               "x": 1050.75,
-              "y": 272
+              "y": 275
             },
             "size": {
               "width": 130,
@@ -2307,7 +2375,7 @@
             "data": {
               "type": "tm.Process",
               "name": "Documentation\nservice",
-              "description": "",
+              "description": "Handle main assets - documentations of tenant",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -2651,8 +2719,8 @@
           },
           {
             "position": {
-              "x": 870,
-              "y": 550
+              "x": 886.25,
+              "y": 533
             },
             "size": {
               "width": 112.5,
@@ -2723,8 +2791,8 @@
           },
           {
             "position": {
-              "x": 773.75,
-              "y": 638
+              "x": 733.75,
+              "y": 633
             },
             "size": {
               "width": 112.5,
@@ -2883,6 +2951,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 17
+    "threatTop": 22
   }
 }
