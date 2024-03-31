@@ -1762,7 +1762,7 @@
               "isALog": true,
               "isEncrypted": true,
               "isSigned": false,
-              "storesCredentials": true,
+              "storesCredentials": false,
               "storesInventory": true,
               "threats": [
                 {
@@ -1860,7 +1860,7 @@
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
-              "storesInventory": false,
+              "storesInventory": true,
               "threats": [
                 {
                   "id": "487fc92d-3f51-4897-a7d7-00452ac90d63",
@@ -3139,6 +3139,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 39
+    "threatTop": 40
   }
 }
