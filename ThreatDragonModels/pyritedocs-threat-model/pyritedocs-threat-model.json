@@ -1702,7 +1702,7 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isALog": false,
+              "isALog": true,
               "isEncrypted": true,
               "isSigned": false,
               "storesCredentials": true,
