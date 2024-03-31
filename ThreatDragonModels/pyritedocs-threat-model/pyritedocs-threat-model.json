@@ -71,7 +71,7 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isALog": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isSigned": false,
               "storesCredentials": true,
               "storesInventory": false,
@@ -1673,7 +1673,7 @@
           {
             "position": {
               "x": 1375,
-              "y": 550
+              "y": 543
             },
             "size": {
               "width": 120,
@@ -1703,10 +1703,10 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isALog": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isSigned": false,
               "storesCredentials": true,
-              "storesInventory": false,
+              "storesInventory": true,
               "threats": []
             },
             "zIndex": 11
