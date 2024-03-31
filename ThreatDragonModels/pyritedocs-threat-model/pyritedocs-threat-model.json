@@ -68,7 +68,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Tenant Info Database",
-              "description": "Stores connection strings to tenant databases, other personal tenant info.",
+              "description": "Cloud managed database.  Stores connection strings to tenant databases, other personal tenant info.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
@@ -1755,7 +1755,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Tenant Databases",
-              "description": "Shared or isolated database of tenants, stores sensitive data of tenants.",
+              "description": "Cloud managed database. Shared or isolated database of tenants, stores sensitive data of tenants.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
